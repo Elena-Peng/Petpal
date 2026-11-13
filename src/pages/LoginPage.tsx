@@ -73,12 +73,12 @@ export default function LoginPage() {
         {/* Logo 行：圆形图标原图 + PetPal 字标原图，紧挨排列 */}
         <div className="mt-1 flex items-center gap-2">
           <img
-            src="/assets/logo.png"
+            src={`${import.meta.env.BASE_URL}assets/logo.png`}
             alt="PetPal 图标"
             className="w-11 h-11 rounded-full object-cover shrink-0"
           />
           <img
-            src="/assets/wordmark.png"
+            src={`${import.meta.env.BASE_URL}assets/wordmark.png`}
             alt="PetPal"
             className="h-7 w-auto object-contain"
           />

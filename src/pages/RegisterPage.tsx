@@ -94,12 +94,12 @@ export default function RegisterPage() {
       <div className="relative z-10 flex flex-col flex-1 px-6 pt-2 pb-8">
         <div className="mt-1 flex items-center gap-2">
           <img
-            src="/assets/logo.png"
+            src={`${import.meta.env.BASE_URL}assets/logo.png`}
             alt="PetPal 图标"
             className="w-11 h-11 rounded-full object-cover shrink-0"
           />
           <img
-            src="/assets/wordmark.png"
+            src={`${import.meta.env.BASE_URL}assets/wordmark.png`}
             alt="PetPal"
             className="h-7 w-auto object-contain"
           />

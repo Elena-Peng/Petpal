@@ -88,12 +88,12 @@ export default function MineShell() {
         <header className="mine-head">
           <div className="mine-brand">
             <img
-              src="/assets/logo.png"
+              src={`${import.meta.env.BASE_URL}assets/logo.png`}
               alt="PetPal 图标"
               className="mine-brand-logo"
             />
             <img
-              src="/assets/wordmark.png"
+              src={`${import.meta.env.BASE_URL}assets/wordmark.png`}
               alt="PetPal"
               className="mine-brand-word"
             />

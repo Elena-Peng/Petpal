@@ -47,7 +47,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 // 降级视图：纯 DOM + location 跳转，不依赖 Router 上下文。
 const FallbackUI = ({ onRetry }: { onRetry: () => void }) => {
   const goHome = () => {
-    window.location.assign("/");
+    window.location.assign(import.meta.env.BASE_URL);
   };
 
   return (
