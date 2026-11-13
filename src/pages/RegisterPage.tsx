@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { useNavigate, useSearchParams, useLocation } from 'react-router'
-import StatusBar from '../components/login/StatusBar'
 import { registerUser } from '../utils/userStore'
 import { scopedKey } from '../utils/accountScoped'
 import {
@@ -89,9 +88,7 @@ export default function RegisterPage() {
         <CloseIcon className="w-4 h-4" />
       </button>
 
-      <StatusBar />
-
-      <div className="relative z-10 flex flex-col flex-1 px-6 pt-2 pb-8">
+      <div className="relative z-10 flex flex-col flex-1 px-6 pt-7 pb-8">
         <div className="mt-1 flex items-center gap-2">
           <img
             src={`${import.meta.env.BASE_URL}assets/logo.png`}

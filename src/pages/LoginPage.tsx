@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { useNavigate, useSearchParams } from 'react-router'
-import StatusBar from '../components/login/StatusBar'
 import ThirdPartyLogin from '../components/login/ThirdPartyLogin'
 import { loginUser, isLoggedIn } from '../utils/userStore'
 import {
@@ -12,7 +11,7 @@ import {
 } from '../components/login/Icons'
 
 // PetPal 登录页（绿色主题，按设计截图还原）
-// 结构：状态栏 → Logo(图标+字标) → 标题「现在登录」→ 副标题 → 账号框 → 密码框(忘了?)
+// 结构：Logo(图标+字标) → 标题「现在登录」→ 副标题 → 账号框 → 密码框(忘了?)
 //       → 登录胶囊按钮 → 微信/QQ 通栏 → 注册入口；校验通过后进入首页
 export default function LoginPage() {
   const navigate = useNavigate()
@@ -67,9 +66,7 @@ export default function LoginPage() {
         <CloseIcon className="w-4 h-4" />
       </button>
 
-      <StatusBar />
-
-      <div className="relative z-10 flex flex-col flex-1 px-6 pt-2 pb-8">
+      <div className="relative z-10 flex flex-col flex-1 px-6 pt-7 pb-8">
         {/* Logo 行：圆形图标原图 + PetPal 字标原图，紧挨排列 */}
         <div className="mt-1 flex items-center gap-2">
           <img
