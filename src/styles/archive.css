@@ -1,0 +1,1175 @@
+/* 宠物档案-概览页：406px 手机列 + 绿色主题，独立外壳 */
+.ar-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: #e7ede8;
+}
+
+.ar-canvas {
+  position: relative;
+  width: min(406px, 100vw);
+  max-width: 406px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #e8f8d8 0%, #f0fbe2 34%, #fbfff6 100%);
+}
+
+/* 顶部栏 */
+.ar-topbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  padding: 14px 14px 10px;
+}
+
+.ar-back {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: transparent;
+  color: #1f3d22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ar-title {
+  flex: 1;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 700;
+  color: #1f3d22;
+  margin-right: 34px;
+}
+
+.ar-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 14px 18px;
+  scrollbar-width: none;
+}
+
+.ar-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* 评分卡 */
+.ar-score-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #d8f0c6;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+
+.ar-score-label {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: #4d6b45;
+}
+
+.ar-score-num {
+  margin: 0 0 6px;
+  color: #1f3d22;
+}
+
+.ar-score-num b {
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.ar-score-num span {
+  font-size: 14px;
+  color: #6b8060;
+  margin-left: 2px;
+}
+
+.ar-score-status {
+  margin: 0;
+  font-size: 12.5px;
+  color: #55704c;
+}
+
+.ar-ring {
+  width: 78px;
+  height: 78px;
+  flex: none;
+}
+
+.ar-ring-bg {
+  fill: none;
+  stroke: #bfe0b0;
+  stroke-width: 7;
+}
+
+.ar-ring-val {
+  fill: none;
+  stroke: #1f6d2e;
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+
+.ar-ring-num {
+  font-size: 22px;
+  font-weight: 800;
+  fill: #1f3d2e;
+}
+
+/* Tab 切换 */
+.ar-tabs {
+  display: flex;
+  background: #e4ece0;
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 14px;
+}
+
+.ar-tab {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: 9px 0;
+  font-size: 14px;
+  color: #6d8263;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.ar-tab.active {
+  background: #ffffff;
+  color: #1f3d22;
+  font-weight: 700;
+  box-shadow: 0 1px 4px rgba(60, 110, 70, 0.12);
+}
+
+/* 通用白卡 */
+.ar-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(60, 110, 70, 0.06);
+}
+
+/* 体重卡 */
+.ar-weight-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ar-weight-title {
+  font-size: 14px;
+  color: #33442e;
+}
+
+.ar-weight-tag {
+  font-size: 12px;
+  color: #1f6d2e;
+  background: #e4f5d8;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.ar-weight-value {
+  margin: 8px 0 4px;
+  font-size: 26px;
+  font-weight: 800;
+  color: #22301f;
+}
+
+.ar-weight-value span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #788a70;
+  margin-left: 2px;
+}
+
+.ar-chart {
+  width: 100%;
+  height: 104px;
+  display: block;
+}
+
+.ar-grid {
+  stroke: #e2e8dd;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.ar-line {
+  fill: none;
+  stroke: #1f6d2e;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.ar-xaxis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #8a9a86;
+  margin-top: 2px;
+  padding: 0 2px;
+}
+
+/* 近期记录 */
+.ar-recent-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.ar-recent-head h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1f3d22;
+}
+
+.ar-viewall {
+  border: 0;
+  background: transparent;
+  color: #4c9a52;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ar-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 14px;
+  position: relative;
+}
+
+.ar-timeline::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: #cfe3c6;
+}
+
+.ar-timeline li {
+  position: relative;
+  padding: 0 0 18px 14px;
+}
+
+.ar-timeline li:last-child {
+  padding-bottom: 4px;
+}
+
+.ar-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #4c9a52;
+  border: 2px solid #e4f5d8;
+}
+
+.ar-tl-title {
+  margin: 0 0 3px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #2c3a2c;
+}
+
+.ar-tl-meta {
+  margin: 0;
+  font-size: 12px;
+  color: #8a9a86;
+}
+
+.ar-placeholder {
+  background: #fff;
+  border-radius: 14px;
+  padding: 36px 16px;
+  text-align: center;
+  color: #8a9a86;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* 添加记录按钮 */
+.ar-add-btn {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 13px;
+  background: #58b368;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.ar-add-btn:active {
+  background: #4aa259;
+}
+
+/* ===== 记录 Tab ===== */
+.ar-quick-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2px 2px 12px;
+}
+
+.ar-quick-head h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1f3d22;
+}
+
+.ar-quick-more {
+  border: 0;
+  background: transparent;
+  color: #4c9a52;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ar-quick-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ar-quick-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 0;
+  border-radius: 14px;
+  padding: 13px 12px;
+  box-shadow: 0 2px 8px rgba(60, 110, 70, 0.06);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  width: 100%;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.ar-quick-item:hover { background: #f6fbf2; }
+.ar-quick-item:active { transform: scale(0.98); }
+
+.ar-quick-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.ar-quick-icon img {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+}
+
+.ar-quick-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ar-quick-text b {
+  font-size: 14px;
+  color: #22301f;
+}
+
+.ar-quick-text small {
+  font-size: 11.5px;
+  color: #8a9a86;
+  margin-top: 2px;
+}
+
+.ar-quick-state {
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  flex: none;
+  object-fit: contain;
+}
+
+/* 筛选 chips */
+.ar-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.ar-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.ar-filter-chip {
+  flex: none;
+  border: 1px solid #cfe3c6;
+  background: #ffffff;
+  color: #2f6b35;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.ar-filter-chip.active {
+  background: #1f6d2e;
+  border-color: #1f6d2e;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 健康明细列表 */
+.ar-log {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 4px 14px;
+  box-shadow: 0 2px 8px rgba(60, 110, 70, 0.06);
+}
+
+.ar-log-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #f0f4ee;
+}
+
+.ar-log-item:last-child {
+  border-bottom: 0;
+}
+
+.ar-log-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.ar-log-icon img {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+}
+
+.ar-log-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ar-log-time {
+  font-size: 11.5px;
+  color: #9aa894;
+}
+
+.ar-log-title {
+  font-size: 14.5px;
+  color: #22301f;
+  margin: 2px 0;
+}
+
+.ar-log-sub {
+  font-size: 11.5px;
+  color: #8a9a86;
+}
+
+.ar-log-tag {
+  flex: none;
+  font-size: 12.5px;
+  color: #6d8263;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ar-log-tag.link {
+  color: #4c9a52;
+  font-weight: 600;
+}
+
+/* ===== 报告 Tab ===== */
+.ar-report-banner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #1f6d2e, #15502a);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.ar-banner-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.ar-banner-en {
+  margin: 0 0 6px;
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  color: #9fd6a8;
+  text-transform: uppercase;
+}
+
+.ar-banner-left h2 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.ar-banner-desc {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #d6efd8;
+}
+
+.ar-banner-ring {
+  width: 76px;
+  height: 76px;
+  flex: none;
+}
+
+.ar-banner-ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 7;
+}
+
+.ar-banner-ring-val {
+  fill: none;
+  stroke: #8be35a;
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+
+.ar-banner-ring-num {
+  font-size: 20px;
+  font-weight: 800;
+  fill: #ffffff;
+}
+
+.ar-metrics {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ar-metric {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(60, 110, 70, 0.06);
+}
+
+.ar-metric-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #e4f5d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.ar-metric-icon img {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+}
+
+.ar-metric b {
+  font-size: 13px;
+  color: #22301f;
+}
+
+.ar-metric small {
+  font-size: 11px;
+  color: #8a9a86;
+  margin-top: 3px;
+}
+
+.ar-reports-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.ar-reports-head h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1f3d22;
+}
+
+.ar-reports-more {
+  border: 0;
+  background: transparent;
+  color: #4c9a52;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ar-report-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 13px 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(60, 110, 70, 0.06);
+}
+
+.ar-report-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: #e4f5d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.ar-report-icon img {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+}
+
+.ar-report-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ar-report-title {
+  font-size: 14.5px;
+  color: #22301f;
+}
+
+.ar-report-sub {
+  font-size: 12px;
+  color: #8a9a86;
+  margin: 3px 0;
+}
+
+.ar-report-date {
+  font-size: 11.5px;
+  color: #9aa894;
+}
+
+.ar-report-tag {
+  flex: none;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.ar-report-tag.good {
+  background: #e4f5d8;
+  color: #2f8f3e;
+}
+
+.ar-report-tag.warn {
+  background: #fdeedd;
+  color: #d98324;
+}
+
+.ar-export-btn {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #bfe3b6;
+  background: #ffffff;
+  color: #2f6b35;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 13px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.ar-export-btn:active {
+  background: #f3fbec;
+}
+
+/* ===== 记录项选择页（/archive/quick-options）===== */
+.qo-scroll {
+  padding-top: 8px;
+}
+
+.qo-hint {
+  font-size: 12px;
+  color: #7d8f78;
+  margin: 0 2px 14px;
+  line-height: 1.5;
+}
+
+.qo-block {
+  margin-bottom: 18px;
+}
+
+.qo-block-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f3d22;
+  margin: 0 2px 8px;
+}
+
+.qo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid rgba(157, 183, 125, 0.22);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.qo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px;
+  border-bottom: 1px solid #f0f3ec;
+  cursor: pointer;
+}
+
+.qo-item:last-child {
+  border-bottom: 0;
+}
+
+.qo-item.disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.qo-item-state {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid #c6d6bd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.qo-item-state img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+}
+
+.qo-item-state.on {
+  border-color: #4a9e57;
+  background: #e4f5d8;
+}
+
+.qo-item-name {
+  flex: 1;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #1f3d22;
+}
+
+.qo-item-unit {
+  font-size: 12.5px;
+  color: #8aa087;
+}
+
+.qo-item-flag {
+  flex: none;
+  font-size: 11px;
+  color: #2f8f3e;
+  background: #e4f5d8;
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+
+.qo-item-del {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: #f6f7f3;
+  color: #c05b5b;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qo-item-state.off {
+  border-color: #c6d6bd;
+  background: #f4f6f1;
+}
+
+.qo-item-restore {
+  flex: none;
+  font-size: 12px;
+  color: #2f8f3e;
+  background: #e4f5d8;
+  border: 0;
+  border-radius: 10px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.qo-item-empty {
+  padding: 16px 12px;
+  color: #8aa087;
+  font-size: 13px;
+  text-align: center;
+}
+
+.qo-custom {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(157, 183, 125, 0.22);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.qo-input {
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  border: 1px solid #dbe5d4;
+  border-radius: 9px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #1f3d22;
+  background: #fbfdf9;
+  outline: none;
+}
+
+.qo-input:focus {
+  border-color: #4a9e57;
+}
+
+.qo-input-unit {
+  flex: 0 0 84px;
+}
+
+.qo-add {
+  flex: none;
+  height: 40px;
+  padding: 0 16px;
+  border: 0;
+  background: #2f8f3e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 9px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.qo-add:active {
+  background: #277a34;
+}
+
+/* ===== 记录页：记录选项按钮 / 空态 / 添加健康记录弹窗 ===== */
+.ar-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ar-quick-add {
+  border: 1px solid #bfe3b6;
+  background: #ffffff;
+  color: #2f6b35;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 4px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ar-quick-add:active {
+  background: #f3fbec;
+}
+
+.ar-log-empty,
+.ar-tl-empty {
+  padding: 18px 8px;
+  text-align: center;
+  font-size: 13px;
+  color: #9aa894;
+}
+
+.ar-add-types {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ar-add-custom-type {
+  margin-bottom: 12px;
+}
+
+.ar-add-type {
+  flex: 1;
+  height: 36px;
+  border: 1px solid #dbe5d4;
+  background: #fbfdf9;
+  color: #5f745c;
+  font-size: 14px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.ar-add-type.active {
+  border-color: #4a9e57;
+  background: #e4f5d8;
+  color: #2f6b35;
+  font-weight: 600;
+}
+
+.status-modal-body.ar-add-body {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.ar-add-input {
+  height: 40px;
+  border: 1px solid #dbe5d4;
+  border-radius: 9px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #1f3d22;
+  background: #fbfdf9;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.ar-add-input:focus {
+  border-color: #4a9e57;
+}
+
+/* 健康档案 - 健康指标区块（评分卡下方，查看/编辑当前宠物指标） */
+.ar-metrics {
+  margin-top: 14px;
+}
+.ar-metrics-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.ar-metrics-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f3d2a;
+}
+.ar-metrics-manage {
+  border: 1px solid rgba(31, 109, 46, 0.4);
+  color: #1f6d2e;
+  background: transparent;
+  border-radius: 14px;
+  padding: 5px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.ar-metrics-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ar-metric-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  background: #eef7e6;
+  border: 1px solid #e0eecb;
+  color: #1f6d2e;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+.ar-metric-chip b {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1f6d2e;
+}
+.ar-metrics-empty {
+  color: #8a9a86;
+  font-size: 13px;
+}
+/* 管理健康指标弹窗 */
+.ar-metric-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 0;
+}
+.ar-metric-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.ar-metric-input {
+  flex: 1;
+  height: 38px;
+  border: 1px solid #dfe8dc;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 14px;
+  background: #fafdf9;
+}
+.ar-metric-input:focus {
+  outline: none;
+  border-color: #4a9e57;
+}
+.ar-metric-del {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(214, 69, 69, 0.35);
+  color: #d64545;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.ar-metric-add {
+  width: 100%;
+  height: 40px;
+  border: 1px dashed #9bb09b;
+  background: transparent;
+  color: #1f6d2e;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.ar-metric-tip {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #8a9a86;
+}
+
+/* 记录页 - 健康指标简单入口行（点击弹出编辑） */
+.ar-metrics-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #eef7e6;
+  border: 1px solid #e0eecb;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.ar-metrics-entry-title {
+  flex: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f6d2e;
+}
+.ar-metrics-entry-sum {
+  flex: 1;
+  font-size: 13px;
+  color: #3f5a47;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ar-metrics-entry-arrow {
+  flex: none;
+  font-size: 18px;
+  color: #1f6d2e;
+}
+
+/* 健康指标独立管理页（/archive/metrics） */
+.hm-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.hm-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.hm-row .ar-metric-input {
+  flex: 1;
+  min-width: 0;
+}
+.hm-row .hm-unit {
+  flex: 0.6;
+}
+.hm-save {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 24px;
+  background: #1f6d2e;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.hm-save:active {
+  background: #1a5c27;
+}

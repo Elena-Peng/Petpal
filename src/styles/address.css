@@ -1,0 +1,251 @@
+/* 地址管理页 */
+.ad-canvas {
+  padding-bottom: 20px;
+}
+
+.ad-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 4px 14px;
+}
+
+.ad-back, .ad-close {
+  background: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a2b1a;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.ad-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+
+.ad-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ad-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 4px 16px rgba(31, 109, 46, 0.06);
+}
+
+.ad-card-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.ad-card-tag-row h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+
+.ad-default {
+  background: #e8f5e0;
+  color: #1f6d2e;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.ad-card-contact {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: #1a2b1a;
+}
+
+.ad-card-detail {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: #4a5a48;
+}
+
+.ad-card-note {
+  margin: 0;
+  font-size: 12px;
+  color: #8a9a86;
+}
+
+.ad-edit {
+  background: #f5f7f4;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a2b1a;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.ad-add {
+  border: 2px dashed #c8dcc0;
+  background: transparent;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f6d2e;
+  cursor: pointer;
+}
+
+.ad-tip {
+  display: flex;
+  gap: 10px;
+  background: #e8f0f8;
+  border-radius: 12px;
+  padding: 14px;
+  color: #1a4a7a;
+}
+
+.ad-tip strong {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.ad-tip p {
+  margin: 0;
+  font-size: 11px;
+  color: #4a6a8a;
+}
+
+/* 地址编辑页 */
+.ad-tag-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ad-tag-btn {
+  padding: 8px 16px;
+  border: 1px solid #e0e6dd;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 13px;
+  color: #4a5a48;
+  cursor: pointer;
+}
+
+.ad-tag-btn.active {
+  background: #1f6d2e;
+  color: #fff;
+  border-color: #1f6d2e;
+}
+
+.ad-default-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #1a2b1a;
+  cursor: pointer;
+}
+
+/* 地址空态引导 */
+.ad-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.ad-empty-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+
+.ad-empty-desc {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #8a9a86;
+}
+
+.ad-empty-btn {
+  background: #1f6d2e;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 卡片操作区：编辑 / 删除 */
+.ad-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: none;
+}
+
+.ad-del {
+  background: #f5f7f4;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e0432a;
+  cursor: pointer;
+}
+
+/* 地址页轻提示 */
+.ad-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 120px;
+  transform: translateX(-50%);
+  z-index: 50;
+  background: rgba(26, 43, 26, 0.9);
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* 编辑页删除按钮 */
+.pe-delete {
+  margin-top: 14px;
+  background: #fff;
+  border: 1.5px solid #e0432a;
+  color: #e0432a;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}

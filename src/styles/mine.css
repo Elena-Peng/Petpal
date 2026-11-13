@@ -1,0 +1,235 @@
+/* 我的页 */
+.mine-canvas {
+  background: linear-gradient(180deg, #d8f5b6 0%, #eefbd8 12%, #fbfff6 40%);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.mine-content {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding-bottom: 90px;
+}
+
+.mine-content::-webkit-scrollbar {
+  display: none;
+}
+
+.mine-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 4px 10px;
+}
+
+.mine-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mine-brand-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.mine-brand-word {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+}
+
+.mine-head-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.mine-head-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #33402f;
+  cursor: pointer;
+}
+
+.mine-head-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.mine-head-dot {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e0432a;
+}
+
+/* 用户 */
+.mine-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 4px 10px;
+}
+
+.mine-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(31, 109, 46, 0.15);
+}
+
+.mine-nick {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 800;
+  color: #1a2b1a;
+}
+
+.mine-meta {
+  margin: 0;
+  font-size: 14px;
+  color: #4a5a48;
+}
+
+/* Care+ 胶囊 */
+.mine-care {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fbf0d2;
+  color: #a87e1a;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 6px 0 18px;
+}
+
+.mine-care img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* 订单快捷 */
+.mine-orders {
+  display: flex;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px 6px 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(31, 109, 46, 0.08);
+}
+
+.mine-order {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  cursor: pointer;
+}
+
+.mine-order-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.mine-order-label {
+  font-size: 12px;
+  color: #1a2b1a;
+  font-weight: 600;
+}
+
+.mine-order-divider {
+  position: absolute;
+  right: -6px;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: #e0e8dd;
+}
+
+/* 菜单 */
+.mine-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mine-menu-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  background: #ffffff;
+  border: none;
+  border-radius: 18px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 16px rgba(31, 109, 46, 0.08);
+  cursor: pointer;
+  text-align: left;
+}
+
+.mine-menu-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex: none;
+}
+
+.mine-menu-label {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+
+/* 底部 Bar 当前 Tab 高亮 */
+.bar-active {
+  color: #1a2b1a !important;
+  font-weight: 800 !important;
+}
+
+.bar-icon-active,
+.bar-icon-active > * {
+  filter: brightness(0.25) !important;
+}
+
+/* 订单状态数量角标 */
+.mine-order-badge {
+  position: absolute;
+  top: -5px;
+  right: 16%;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: #e0432a;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+}

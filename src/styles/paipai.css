@@ -1,0 +1,201 @@
+/* AI 派派聊天页：复用 406px 手机列与绿色主题，独立于首页外壳 */
+.paipai-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: #e7ede8;
+}
+
+.paipai-canvas {
+  position: relative;
+  width: min(406px, 100vw);
+  max-width: 406px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #e8f8d8 0%, #f2fce6 30%, #fbfff6 100%);
+}
+
+/* 顶部栏：返回 + 标题 + 清除 */
+.pp-topbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 14px 10px;
+}
+
+.pp-back {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: transparent;
+  color: #1f6d2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pp-back:hover {
+  background: rgba(31, 109, 46, 0.08);
+}
+
+.pp-title {
+  flex: 1;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1f3d22;
+  margin-right: 34px;
+}
+
+.pp-clear {
+  border: 0;
+  background: transparent;
+  color: #4c9a52;
+  font-size: 13px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+/* 消息滚动区 */
+.pp-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 14px 14px;
+  scrollbar-width: none;
+}
+
+.pp-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.pp-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  margin-bottom: 14px;
+}
+
+.pp-row.user {
+  flex-direction: row-reverse;
+}
+
+.pp-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+  background: #fff;
+}
+
+.pp-bubble {
+  max-width: 74%;
+  padding: 10px 13px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.pp-bubble.ai {
+  background: #ffffff;
+  color: #2c3a2c;
+  border-bottom-left-radius: 6px;
+  box-shadow: 0 2px 8px rgba(60, 110, 70, 0.08);
+}
+
+.pp-bubble.user {
+  background: #6fbf73;
+  color: #fff;
+  border-bottom-right-radius: 6px;
+}
+
+.pp-bubble-text {
+  margin: 0;
+}
+
+.pp-answer-title {
+  margin: 0 0 6px;
+  font-weight: 600;
+  color: #1f6d2e;
+}
+
+.pp-bubble.user .pp-answer-title {
+  color: #fff;
+}
+
+.pp-answer-list {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.pp-answer-list li {
+  margin: 2px 0;
+}
+
+/* 建议问题胶囊 */
+.pp-suggest {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 6px 42px;
+}
+
+.pp-chip {
+  border: 1px solid #bfe3b6;
+  background: #f3fbec;
+  color: #2f6b35;
+  font-size: 12.5px;
+  padding: 7px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.pp-chip:hover {
+  background: #e6f6dc;
+}
+
+/* 底部输入栏 */
+.pp-inputbar {
+  flex: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: #ffffff;
+  border-top: 1px solid #eef3ea;
+}
+
+.pp-input {
+  flex: 1;
+  height: 40px;
+  border: 0;
+  border-radius: 20px;
+  background: #f1f6ef;
+  padding: 0 16px;
+  font-size: 14px;
+  outline: none;
+}
+
+.pp-send {
+  height: 40px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 20px;
+  background: #58b368;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pp-send:active {
+  background: #4aa259;
+}

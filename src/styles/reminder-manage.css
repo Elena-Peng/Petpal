@@ -1,0 +1,268 @@
+/* 今日提醒管理页 */
+.rm-canvas {
+  padding-bottom: 30px;
+}
+
+.rm-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0 16px;
+}
+
+.rm-back {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+}
+
+.rm-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+
+.rm-add {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.rm-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rm-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rm-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.rm-info {
+  flex: 1;
+}
+
+.rm-name {
+  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a2b1a;
+}
+
+.rm-desc {
+  margin: 0;
+  font-size: 11px;
+  color: #8a9a86;
+}
+
+.rm-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rm-check-added {
+  background: #4caf50;
+  border-color: #4caf50;
+}
+
+.rm-item-added {
+  background: #f1f8e9;
+}
+
+/* 新增提醒表单 */
+.rm-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rm-form-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.rm-form-icon img {
+  width: 36px;
+  height: 36px;
+}
+
+.rm-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rm-form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a2b1a;
+}
+
+.rm-form-input {
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+}
+
+.rm-form-input::placeholder {
+  color: #bbb;
+}
+
+.rm-add:disabled {
+  background: #c8e6c9;
+  cursor: not-allowed;
+}
+
+.rm-edit-btn {
+  background: #fff3e0;
+  color: #ff9800;
+  border: none;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.rm-delete-btn {
+  background: #ffebee;
+  color: #f44336;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.rm-form-unit {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #888;
+}
+
+/* 顶部右侧占位，保持标题居中 */
+.rm-head-ghost {
+  width: 40px;
+  height: 40px;
+}
+
+/* 表单内联错误提示 */
+.rm-form-error {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #e53935;
+}
+
+/* 提醒类型胶囊选择 */
+.rm-type-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rm-type-chip {
+  border: 1px solid rgba(46, 125, 50, 0.25);
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  color: #3a4638;
+  cursor: pointer;
+}
+
+.rm-type-chip.active {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 删除按钮二次确认态 */
+.rm-delete-btn.confirm {
+  background: #f44336;
+  color: #ffffff;
+}
+
+/* 轻提示 toast */
+.rm-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 90px;
+  transform: translateX(-50%);
+  z-index: 60;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(26, 43, 26, 0.88);
+  color: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* 列表空态 */
+.rm-empty {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 13px;
+  color: #8a9a86;
+}
+
+/* 非法 id / 无数据兜底空态 */
+.rm-empty-state {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.rm-empty-title {
+  margin: 0;
+  font-size: 14px;
+  color: #6a7a66;
+}

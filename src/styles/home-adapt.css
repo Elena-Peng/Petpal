@@ -1,0 +1,705 @@
+/* ============================================================
+   首页手机屏适配 · 对齐登录页形式
+   - 全屏浅绿渐变背景铺满、内容列居中、整页纵向滚动
+   - 顶层模块按视觉顺序流式排列（flex order），卡片内部布局保持保真
+   - 底部导航 fixed 贴底；AI 悬浮球独立可拖动
+   ============================================================ */
+
+/* 桌面舞台：中性衬托色，手机屏水平居中；舞台本身不滚动 */
+.home-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: #e7ede8;
+}
+
+/* 手机屏（iPhone 宽）：固定窄宽、满高、内部纵向滚动、浅绿渐变、隐藏滚动条 */
+.home-canvas {
+  position: relative;
+  width: min(406px, 100vw);
+  max-width: 406px;
+  height: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #d8f5b6 0%, #eefbd8 12%, #fbfff6 40%);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.home-canvas::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* 全局隐藏原生滚动条（仍可滚动） */
+html,
+body {
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* 外层滚动接管 */
+.scroll-container {
+  height: auto !important;
+  min-height: 100%;
+  overflow: visible !important;
+}
+
+.Pixso-frame-332_254 {
+  position: relative;
+  width: 100%;
+  height: auto !important;
+  min-height: 100%;
+  overflow: visible !important;
+  background: transparent !important;
+}
+
+/* 原框内装饰背景层交给 stage 渐变，隐藏避免错位 */
+.Pixso-rectangle-332_255,
+.Pixso-rectangle-332_257 {
+  display: none !important;
+}
+
+/* 内容列：406 设计宽居中；flex 纵向排列顶层模块 */
+.Pixso-frame-332_256 {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 406px !important;
+  margin: 0 auto;
+  height: auto !important;
+  overflow: visible !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding-top: 16px;
+  padding-bottom: 104px;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+}
+
+/* 顶层模块：取消绝对定位，按视觉顺序排列；内部子元素仍相对卡片定位 */
+.Pixso-group-332_310,
+.Pixso-group-332_320,
+.Pixso-group-332_335,
+.Pixso-group-332_301,
+.Pixso-group-332_284,
+.Pixso-group-332_368,
+.Pixso-group-332_345,
+.Pixso-group-332_258 {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  flex-shrink: 0;
+}
+
+.Pixso-group-332_310 { order: 1; align-self: stretch; }
+.Pixso-group-332_320 { order: 2; }
+.Pixso-group-332_335 { order: 3; }
+.Pixso-group-332_301 { order: 4; }
+.Pixso-group-332_284 { order: 5; }
+.Pixso-group-332_368 { order: 6; }
+.Pixso-group-332_345 { order: 7; }
+.Pixso-group-332_258 { order: 8; }
+
+/* 原静态 AI 头像（已由可拖动悬浮球替代）隐藏，避免重复 */
+.stroke-wrapper-332_408 {
+  display: none !important;
+}
+
+/* 底部导航：fixed 贴底、内容列内水平居中，不随滚动 */
+.Pixso-instance-332_427 {
+  position: fixed !important;
+  left: 50% !important;
+  top: auto !important;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(406px, 100%) !important;
+  z-index: 45;
+}
+
+.Pixso-instance-332_427 .Pixso-symbol-2_437 {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+}
+
+/* 视觉统一：主要卡片柔和阴影，贴近登录页质感 */
+.Pixso-rectangle-332_321,
+.Pixso-rectangle-332_260,
+.Pixso-rectangle-332_267,
+.Pixso-rectangle-332_274 {
+  box-shadow: 0 6px 18px rgba(46, 125, 50, 0.08);
+}
+
+/* ---------- 紧凑化：标题置顶、卡片纵向紧跟，消除导出稿堆叠留白 ---------- */
+
+/* 今日提醒 284 */
+.Pixso-paragraph-332_299 { top: 0 !important; }
+.Pixso-paragraph-332_300 { top: 3px !important; }
+.stroke-wrapper-332_285 { top: 34px !important; height: 110px !important; }
+.Pixso-rectangle-332_287 { top: 41px !important; height: 48px !important; background: #fde2e4 !important; width: 40px !important; height: 40px !important; border-radius: 10px !important; }
+.Pixso-rectangle-332_288 { top: 97px !important; width: 40px !important; height: 40px !important; background: #e8f5e0 !important; border-radius: 10px !important; }
+.Pixso-rectangle-332_289 { top: 45px !important; }
+.Pixso-vector-332_290 { top: 108px !important; }
+.Pixso-paragraph-332_291 { top: 41px !important; }
+.Pixso-paragraph-332_292 { top: 97px !important; }
+.Pixso-paragraph-332_293 { top: 63px !important; white-space: nowrap !important; font-size: 11px !important; }
+.Pixso-paragraph-332_294 { top: 119px !important; white-space: nowrap !important; font-size: 11px !important; }
+.Pixso-vector-332_295 { top: 52px !important; }
+.Pixso-vector-332_296 { top: 101px !important; }
+.Pixso-vector-332_286 { top: 87px !important; }
+.Pixso-group-332_284 { height: auto !important; }
+
+/* 今日状态 368：标题置顶，两列卡片紧凑排布 */
+.Pixso-group-332_369 { height: 30px !important; position: relative !important; }
+.Pixso-paragraph-332_371 { top: 1px !important; }
+.Pixso-paragraph-332_372 { top: 4px !important; }
+.Pixso-group-332_368 { height: auto !important; position: relative !important; padding-bottom: 4px; }
+
+/* 今日状态卡片（React 组件）—— 对照导出稿视觉精调 */
+.status-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 10px 12px 0;
+}
+
+.status-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(157, 183, 125, 0.25);
+  border-radius: 5px;
+  padding: 0 12px;
+  height: 56px;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.status-card:hover { background: #f7fcef; }
+.status-card:active { transform: scale(0.98); }
+
+.status-card.full-row {
+  grid-column: 1 / -1;
+}
+
+.status-card.done {
+  background: #f1f8e6;
+  border-color: #cde9b0;
+}
+
+.status-card-icon {
+  flex: 0 0 33px;
+  flex-shrink: 0;
+  width: 33px;
+  height: 33px;
+  max-width: 33px;
+  max-height: 33px;
+  border-radius: 5px;
+  background: #e1fccf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.status-card-icon img {
+  width: 26px !important;
+  height: 26px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  flex-shrink: 0;
+}
+
+.status-card-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.status-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.99);
+  line-height: 1.2;
+}
+
+.status-card-desc {
+  font-size: 9px;
+  color: #9a8f8f;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.25s ease;
+}
+
+.status-card.done .status-card-desc {
+  color: #4caf50;
+  font-weight: 500;
+}
+
+/* 加号 ↔ 勾 状态转变：旋转 + 缩放（小图标，无背景块） */
+.status-card-check {
+  flex: 0 0 20px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+}
+
+.status-card-check img {
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.status-card-check.checked {
+  animation: status-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes status-pop {
+  0%   { transform: scale(0.3) rotate(-90deg); opacity: 0; }
+  60%  { transform: scale(1.25) rotate(8deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* 记录 Modal 小窗口 */
+.status-modal-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.status-modal {
+  width: 300px;
+  max-width: 86%;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.status-modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a2b1a;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.status-modal-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.status-modal-input {
+  flex: 1;
+  border: 1px solid #d0e6bd;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: #1a2b1a;
+  outline: none;
+  background: #fbfdf8;
+}
+
+.status-modal-input:focus {
+  border-color: #7cb64f;
+  background: #fff;
+}
+
+.status-modal-unit {
+  font-size: 14px;
+  color: #7a7a7a;
+  white-space: nowrap;
+}
+
+.status-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.status-modal-cancel,
+.status-modal-save,
+.status-modal-clear {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.status-modal-clear {
+  background: #fff1f0;
+  color: #e0554a;
+  border: 1px solid #f5c6c2;
+}
+
+.status-modal-cancel {
+  background: #f0f0f0;
+  color: #555;
+}
+
+.status-modal-save {
+  background: #4caf50;
+  color: #fff;
+}
+
+/* 附近优选 258：标题置顶，三张卡片依次纵向排列 */
+.Pixso-paragraph-332_282 { top: 0 !important; }
+.Pixso-paragraph-332_283 { top: 3px !important; }
+.Pixso-group-332_259 { top: 38px !important; }
+.Pixso-group-332_266 { top: 150px !important; }
+.Pixso-group-332_273 { top: 262px !important; }
+.Pixso-group-332_258 { height: 370px !important; }
+
+/* 「附近优选」标题组被导出成整块大小的透明容器，会盖住三张卡片吃掉点击：
+   容器本身不接收事件，只把「查看更多」放回可点 */
+.Pixso-group-332_280 { pointer-events: none !important; }
+.Pixso-paragraph-332_283 { pointer-events: auto !important; }
+
+/* 区块标题右侧箭头：原按父组百分比贴顶，与文字基线错位；改为固定 px 垂直居中对齐 */
+.Pixso-vector-332_298 { top: 7px !important; bottom: auto !important; }
+.Pixso-vector-332_370 { top: 9px !important; bottom: auto !important; }
+.Pixso-vector-332_281 { top: 9px !important; bottom: auto !important; }
+
+/* 宠物卡（啾啾）照片左缘柔化渐隐，消除照片与浅绿卡底之间的竖直硬边界 */
+.Pixso-rectangle-332_330 {
+  -webkit-mask-image: linear-gradient(90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.35) 20%,
+    rgba(0, 0, 0, 1) 48%);
+  mask-image: linear-gradient(90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.35) 20%,
+    rgba(0, 0, 0, 1) 48%);
+}
+.Pixso-rectangle-332_331 {
+  left: 138px !important;
+  width: 156px !important;
+  background-image: none !important;
+  background: linear-gradient(90deg,
+    rgba(216, 248, 195, 0.95) 0%,
+    rgba(216, 248, 195, 0.5) 46%,
+    rgba(216, 248, 195, 0) 100%) !important;
+}
+
+/* 首页-米糕：宠物照片替换为金毛原图，沿用同一左缘 mask 渐隐 */
+.migao-photo {
+  background-image: url(@/assets/images/migao-golden.png) !important;
+}
+
+/* 首页-露露：宠物照片替换为垂耳兔原图，沿用同一左缘 mask 渐隐 */
+.lulu-photo {
+  background-image: url(@/assets/images/lulu-rabbit-main.png) !important;
+}
+
+/* 露露中间单位“g・日进食量”较长，防止折行、略缩小字号 */
+.lulu-unit-feed {
+  white-space: nowrap !important;
+  font-size: 8px !important;
+}
+
+/* 问候栏头像 #332_316：三个首页统一使用同一张头像图（椭圆 fill 贴合容器） */
+.Pixso-vector-332_316 {
+  background-image: url(@/assets/images/common-avatar.svg) !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 今日提醒完成态 */
+.reminder-done {
+  color: #aaa !important;
+}
+
+.reminder-check-done {
+  background: #4caf50 !important;
+  border-color: #4caf50 !important;
+}
+
+/* 隐藏导出稿原来的两个固定提醒，改成动态渲染 */
+.Pixso-paragraph-332_291,
+.Pixso-paragraph-332_292,
+.Pixso-paragraph-332_293,
+.Pixso-paragraph-332_294,
+.Pixso-vector-332_295,
+.Pixso-vector-332_296,
+.Pixso-vector-332_286,
+.Pixso-rectangle-332_287,
+.Pixso-rectangle-332_288,
+.Pixso-rectangle-332_289,
+.Pixso-vector-332_290 {
+  display: none !important;
+}
+
+/* 提醒卡片背景透明 */
+.Pixso-group-332_284 {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 隐藏原来的白色卡片背景 */
+.stroke-wrapper-332_285,
+.Pixso-rectangle-332_285,
+.stroke-332_285 {
+  display: none !important;
+}
+
+/* 首页动态提醒列表 */
+.home-reminders {
+  position: relative;
+  margin: 20px 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  z-index: 10;
+}
+
+/* 提醒项 */
+.home-reminder-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.home-reminder-item:last-child {
+  border-bottom: none;
+}
+
+.home-reminder-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.home-reminder-info {
+  flex: 1;
+}
+
+.home-reminder-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.home-reminder-desc {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #999;
+}
+
+.home-reminder-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.home-reminder-item:last-child {
+  border-bottom: none;
+}
+
+.home-reminder-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.home-reminder-info {
+  flex: 1;
+}
+
+.home-reminder-name {
+  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a2b1a;
+}
+
+.home-reminder-desc {
+  margin: 0;
+  font-size: 11px;
+  color: #8a9a86;
+}
+
+.home-reminder-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.home-reminder-check.done {
+  background: #81c784;
+  border-color: #81c784;
+  position: relative;
+}
+
+.home-reminder-check.done::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translate(-50%, -60%) rotate(-45deg);
+}
+
+.home-reminder-item.done .home-reminder-name,
+.home-reminder-item.done .home-reminder-desc {
+  color: #b0bec5 !important;
+}
+
+.home-reminder-item.done .home-reminder-icon {
+  opacity: 0.5;
+}
+
+.home-reminder-empty {
+  padding: 20px 0;
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
+}
+
+/* 首页问候区：动态用户名后文本变长，改为不换行、宽度自适应，避免溢出与下方温度("上海·27℃")重叠 */
+.Pixso-paragraph-332_317 {
+  width: auto !important;
+  max-width: 250px;
+  white-space: nowrap;
+}
+
+/* 派派对话页：用户消息行头像应在气泡右侧外侧（row-reverse 会把它挤到气泡左侧），修正为 row + 气泡靠右 */
+.pp-row.user {
+  flex-direction: row !important;
+}
+.pp-row.user .pp-bubble {
+  margin-left: auto;
+}
+
+/* 我的动态-图文：动态卡片改为图片在上、文字在下（避免图片与文字水平并排互相挤压导致错位） */
+.mp-post-body {
+  flex-direction: column;
+}
+.mp-post-imgs {
+  width: 100%;
+}
+.mp-post-text {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* 我的页/动态页：无头像用户显示中性人形占位，不用真实照片冒充头像 */
+.mine-avatar-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ec, #dde5da);
+  color: #a6b1a4;
+}
+.mine-avatar-empty svg {
+  width: 46px;
+  height: 46px;
+}
+.mp-user-avatar-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ec, #dde5da);
+  color: #a6b1a4;
+}
+.mp-user-avatar-empty svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* 首页问候区左侧头像：覆盖设计稿矢量图，显示当前用户头像（与我的页同一头像） */
+/* 按用户要求：把右侧用户头像覆盖到问候区左侧（问候语左侧），问候语相应右移 */
+#332_311 {
+  position: relative;
+}
+.Pixso-group-332_311 {
+  left: 8px !important;
+  top: -5px !important;
+  width: 44px !important;
+  height: 44px !important;
+}
+.Pixso-group-332_314 {
+  left: 26px !important;
+}
+/* 隐藏问候语左侧设计稿装饰矢量（332_315/332_316），避免与用户头像并排显示成第二个头像 */
+.Pixso-vector-332_315,
+.Pixso-vector-332_316 {
+  display: none !important;
+}
+.home-greet-avatar {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ec, #dde5da);
+  color: #a6b1a4;
+  border: 2px solid #ffffff;
+}
+.home-greet-avatar svg {
+  width: 52%;
+  height: 52%;
+}

@@ -1,0 +1,18 @@
+<svg viewBox="0 0 77.8314 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="77.831429" height="24.000000" fill="none" customFrame="#000000">
+	<defs>
+		<g id="pixso_custom_effect_8">
+			<effect x="0.000000" y="2.000000" visibility="visible" fill="rgb(0,0,0)" fill-opacity="0.25" effectType="dropShadow" stdDeviation="2" radius="0" />
+		</g>
+		<filter id="filter_8" width="77.831429" height="24.000000" x="0.000000" y="0.000000" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_8)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feOffset dx="0.000000" dy="2.000000" in="SourceAlpha" />
+			<feGaussianBlur stdDeviation="0.666666687" />
+			<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0 " />
+			<feBlend result="effect_dropShadow_1" in2="BackgroundImageFix" mode="normal" />
+			<feBlend result="shape" in="SourceGraphic" in2="effect_dropShadow_1" mode="normal" />
+		</filter>
+	</defs>
+	<g filter="url(#filter_8)">
+		<path id="矩形 26" d="M12 0L65.8314 0C71.3543 0 75.8314 4.47715 75.8314 10C75.8314 15.5228 71.3543 20 65.8314 20L12 20C6.47715 20 2 15.5228 2 10C2 4.47715 6.47715 0 12 0Z" fill="rgb(254,253,253)" fill-rule="evenodd" />
+	</g>
+</svg>

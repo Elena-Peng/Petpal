@@ -1,0 +1,998 @@
+/* 社区-推荐页：复用 406px 手机列与绿色主题，独立外壳，底部复用 Bar 贴底 */
+.cm-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: #e7ede8;
+}
+
+.cm-canvas {
+  position: relative;
+  width: min(406px, 100vw);
+  max-width: 406px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #d8f5b6 0%, #eefbd8 12%, #fbfff6 40%);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.cm-content {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding-bottom: 90px;
+}
+
+.cm-content::-webkit-scrollbar {
+  display: none;
+}
+
+.cm-canvas::-webkit-scrollbar {
+  display: none;
+}
+
+/* 顶部标题组 */
+.cm-head {
+  flex: none;
+  padding: 18px 18px 6px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.cm-head-tag {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: #1f6d2e;
+  font-weight: 600;
+}
+
+.cm-head-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a2b1a;
+  line-height: 1.2;
+}
+
+.cm-head-actions {
+  display: flex;
+  gap: 10px;
+  flex: none;
+}
+
+.cm-head-btn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e8ece6;
+  color: #1a2b1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cm-head-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a259ff;
+}
+
+/* 频道 Tab：可横向滑动，激活黑字 + 绿下划线 */
+.cm-tabs {
+  flex: none;
+  display: flex;
+  gap: 22px;
+  padding: 8px 18px 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  border-bottom: 1px solid #d8dcd5;
+}
+
+.cm-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.cm-tab {
+  flex: none;
+  border: 0;
+  background: transparent;
+  padding: 6px 2px 8px;
+  font-size: 15px;
+  color: #6a7a66;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+}
+
+.cm-tab.active {
+  color: #1a2b1a;
+  font-weight: 700;
+}
+
+.cm-tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 3px;
+  background: #1f6d2e;
+  border-radius: 2px;
+}
+
+/* 社区欢迎头卡 */
+.cm-banner {
+  flex: none;
+  margin: 8px 14px 4px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 4px 14px rgba(60, 110, 70, 0.08);
+}
+
+.cm-banner-en {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #5aa06a;
+}
+
+.cm-banner-title {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #1f3d22;
+}
+
+.cm-banner-desc {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #6a7a66;
+}
+
+.cm-banner-btn {
+  border: 0;
+  background: #1f6d2e;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+/* 同城头卡定位图标 */
+.cm-banner-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cm-banner-pin {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+/* 同城「本周同城活动」卡 */
+.cm-city-activity {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 14px rgba(60, 110, 70, 0.08);
+}
+
+.cm-city-act-title {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #1f3d22;
+}
+
+.cm-city-act-desc {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #6a7a66;
+}
+
+.cm-city-act-btn {
+  border: 1px solid #1f6d2e;
+  background: #ffffff;
+  color: #1f6d2e;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+/* 异宠圈「EXOTIC CARE 异宠频道精选」分类卡 */
+.cm-care {
+  flex: none;
+  margin: 4px 14px 0;
+  background: #ffffff;
+  border: 1px solid #e3ece2;
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 14px rgba(60, 110, 70, 0.08);
+}
+
+.cm-care-en {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #5aa06a;
+}
+
+.cm-care-title {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1f3d22;
+}
+
+.cm-care-desc {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #6a7a66;
+}
+
+.cm-care-chips {
+  display: flex;
+  gap: 10px;
+}
+
+.cm-care-chip {
+  flex: 1;
+  border: 1px solid #e3ece2;
+  background: #f7faf6;
+  border-radius: 14px;
+  padding: 8px 8px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.cm-care-chip-img {
+  width: 100%;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cm-care-chip-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1f3d22;
+}
+
+/* 推荐帖子流 */
+.cm-feed {
+  flex: 1;
+  padding: 10px 14px 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 未实现频道空态 */
+.cm-empty {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(60, 110, 70, 0.08);
+}
+
+.cm-empty-title {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f3d22;
+}
+
+.cm-empty-desc {
+  margin: 0;
+  font-size: 12.5px;
+  color: #8a9a86;
+}
+
+.cm-post {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 13px 14px 10px;
+  box-shadow: 0 4px 14px rgba(60, 110, 70, 0.08);
+}
+
+.cm-post-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 8px;
+}
+
+.cm-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+}
+
+/* 无头像兜底：首字圆底，避免出现破图 */
+.cm-avatar-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8f2e4;
+  color: #2f6b3a;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cm-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f3d22;
+}
+
+.cm-follow {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 14px;
+  white-space: nowrap;
+}
+
+.cm-follow.unfollowed {
+  background: #1f6d2e;
+  color: #ffffff;
+}
+
+.cm-follow.followed {
+  background: #ffffff;
+  color: #1f6d2e;
+  border: 1px solid rgba(31, 109, 46, 0.38);
+}
+
+.cm-more {
+  flex: none;
+  border: 0;
+  background: transparent;
+  color: #9aa894;
+  padding: 4px 2px 4px 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.cm-post-text {
+  margin-bottom: 9px;
+}
+
+.cm-post-text p {
+  margin: 0 0 2px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #33402f;
+}
+
+/* 三格缩略图网格：等宽方形、并排排列 */
+.cm-imgs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.cm-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.cm-stats {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #7a8a76;
+}
+
+.cm-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+}
+
+.cm-stat-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* 互动点亮：收藏星金色、点赞心红色、评论激活绿色 */
+.cm-stat.faved {
+  color: #f5a623;
+}
+.cm-stat.liked {
+  color: #ff5b5b;
+}
+.cm-stat.active {
+  color: #1f6d2e;
+}
+
+/* 收藏图标（图片）：点亮时染金色 */
+.cm-stat-fav {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+.cm-stat.faved .cm-stat-fav {
+  filter: invert(76%) sepia(80%) saturate(1400%) hue-rotate(-10deg) brightness(1.02);
+}
+
+/* 评论面板 */
+.cm-comment-panel {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #f4f8f0;
+  border-radius: 10px;
+}
+
+.cm-comment-row {
+  display: flex;
+  gap: 8px;
+}
+
+.cm-comment-input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #d6e3cd;
+  border-radius: 16px;
+  padding: 7px 12px;
+  font-size: 13px;
+  color: #1f3d22;
+  background: #fff;
+  outline: none;
+}
+
+.cm-comment-send {
+  flex: none;
+  border: 0;
+  background: #1f6d2e;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+
+.cm-comment-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cm-comment-list li {
+  font-size: 12.5px;
+  color: #33402f;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+/* 右下悬浮发帖按钮（品牌绿渐变 + 白色铅笔 + 精致阴影） */
+.cm-fab {
+  position: fixed;
+  z-index: 44;
+  bottom: 104px;
+  right: max(16px, calc(50vw - 203px + 16px));
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #3aa855 0%, #1f6d2e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(31, 109, 46, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.cm-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(31, 109, 46, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+.cm-fab:active {
+  transform: scale(0.94);
+}
+
+.cm-fab img {
+  width: 26px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* 社区页底部导航 Bar：fixed 贴底、列内水平居中、不随滚动 */
+.cm-canvas .component-2_437 {
+  position: fixed !important;
+  left: 50% !important;
+  top: auto !important;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(406px, 100vw) !important;
+  z-index: 45;
+}
+
+.cm-canvas .Pixso-symbol-2_437 {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+}
+
+/* 头卡双按钮（走失页：寻找宠物 + 发布走失信息） */
+.cm-banner-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.cm-banner-btn.alt {
+  background: #ffffff;
+  color: #1f6d2e;
+  border: 1px solid #1f6d2e;
+}
+
+/* 走失寻找：城市 + 同城搜索筛选行 */
+.cm-lost-bar {
+  display: flex;
+  gap: 10px;
+  margin: 4px 14px 0;
+}
+
+.cm-lost-city {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #ffffff;
+  border: 1px solid #e3ece2;
+  border-radius: 16px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f3d22;
+  cursor: pointer;
+}
+
+.cm-lost-city img {
+  width: 15px;
+  height: 15px;
+}
+
+.cm-lost-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #ffffff;
+  border: 1px solid #e3ece2;
+  border-radius: 16px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #9aa894;
+}
+
+.cm-lost-search img {
+  width: 16px;
+  height: 16px;
+}
+
+/* 走失帖「联系」按钮 */
+.cm-contact {
+  flex: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 14px;
+  white-space: nowrap;
+  background: #eaf4eb;
+  color: #1f6d2e;
+  border: 1px solid rgba(31, 109, 46, 0.38);
+}
+
+/* 仅两张配图的帖子：两列等宽 */
+.cm-imgs.n-2 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ===== 走失页：寻找宠物 / 发布走失信息 分段选择器（Frame3322757 / 332_2764） ===== */
+.cm-lost-seg {
+  display: flex;
+  gap: 4px;
+  background: #eef3ec;
+  border-radius: 14px;
+  padding: 4px;
+}
+
+.cm-lost-seg-btn {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  color: #5f6f5b;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 8px;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.cm-lost-seg-btn.active {
+  background: #ffffff;
+  color: #1f3d22;
+  font-weight: 700;
+  box-shadow: 0 3px 8px rgba(31, 109, 46, 0.14);
+}
+
+/* ===== 走失发布表单（Frame3322757 / 332_2769 起） ===== */
+.cm-lost-form {
+  flex: none;
+  margin: 4px 14px 112px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 14px rgba(60, 110, 70, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+/* 隐私提示条 */
+.cm-lost-warn {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  background: #fbf4e6;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.cm-lost-warn img {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin-top: 1px;
+}
+
+.cm-lost-warn span {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #8a6234;
+}
+
+/* 表单字段 */
+.cm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cm-field-row {
+  display: flex;
+  gap: 12px;
+}
+
+.cm-field-row .cm-field {
+  flex: 1;
+}
+
+.cm-field-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f3d22;
+}
+
+.cm-field-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dfe8dd;
+  background: #f7faf6;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #1f3d22;
+  outline: none;
+  font-family: inherit;
+}
+
+.cm-field-input::placeholder {
+  color: #9aa894;
+}
+
+.cm-field-textarea {
+  min-height: 76px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* 带下拉箭头的选择框（城市 / 走失日期） */
+.cm-field-select {
+  position: relative;
+  display: flex;
+}
+
+.cm-field-select input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dfe8dd;
+  background: #f7faf6;
+  border-radius: 12px;
+  padding: 10px 30px 10px 12px;
+  font-size: 13px;
+  color: #1f3d22;
+  outline: none;
+}
+
+.cm-field-select img {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+/* 宠物类型分段选择 */
+.cm-type-seg {
+  display: flex;
+  gap: 8px;
+}
+
+.cm-type-seg-btn {
+  border: 1px solid #dfe8dd;
+  background: #f7faf6;
+  color: #5f6f5b;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.cm-type-seg-btn.active {
+  background: #1f6d2e;
+  color: #ffffff;
+  border-color: #1f6d2e;
+  font-weight: 600;
+}
+
+/* 发布提交按钮 */
+.cm-pub-submit {
+  margin-top: 4px;
+  border: 0;
+  background: #1f6d2e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+/* ===== 社区帖子详情页 ===== */
+.pd-stage{height:100%;}
+.pd-canvas{height:100%;overflow-y:auto;background:#f4f7f1;}
+.pd-head{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:12px 14px;background:rgba(255,255,255,.96);}
+.pd-back{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:none;background:transparent;color:#1a2b1a;cursor:pointer;}
+.pd-head-author{display:flex;align-items:center;gap:10px;flex:1;min-width:0;}
+.pd-head-author .pd-avatar{width:38px;height:38px;}
+.pd-head-author-info{display:flex;flex-direction:column;min-width:0;}
+.pd-head-author .pd-name{font-size:15px;font-weight:700;color:#1a2b1a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.pd-head-author .pd-time{font-size:11px;color:#a5b2a0;}
+.pd-share{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:none;background:transparent;color:#1a2b1a;cursor:pointer;}
+
+.pd-gallery{position:relative;background:#000;}
+.pd-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;}
+.pd-track::-webkit-scrollbar{display:none;}
+.pd-gallery-img{width:100%;flex:0 0 100%;scroll-snap-align:center;object-fit:contain;max-height:420px;background:#000;}
+.pd-nav{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border:none;border-radius:50%;background:rgba(255,255,255,.75);color:#1a2b1a;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;}
+.pd-nav-left{left:10px;}
+.pd-nav-right{right:10px;}
+.pd-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5;}
+.pd-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:width .2s,background .2s;}
+.pd-dot.active{width:18px;border-radius:4px;background:#fff;}
+
+.pd-author{display:flex;align-items:center;gap:12px;padding:16px 18px 0;}
+.pd-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;}
+.pd-author-info{display:flex;flex-direction:column;flex:1;}
+.pd-name{font-size:15px;font-weight:700;color:#1a2b1a;}
+.pd-time{font-size:12px;color:#a5b2a0;margin-top:2px;}
+.pd-follow{padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;}
+.pd-follow{background:#1f6d2e;color:#fff;}
+.pd-follow.followed{background:#eef3eb;color:#7b8a74;}
+
+.pd-text{padding:14px 18px 6px;font-size:15px;line-height:1.8;color:#33413a;}
+.pd-text p{margin:0 0 6px;}
+
+.pd-actions{display:flex;gap:26px;padding:14px 18px;margin-top:6px;}
+.pd-act{display:flex;align-items:center;gap:6px;border:none;background:transparent;color:#4a5a4d;font-size:14px;cursor:pointer;}
+.pd-act img{width:18px;height:18px;}
+.pd-act.faved img{filter:brightness(0) saturate(100%) invert(82%) sepia(52%) saturate(2000%) hue-rotate(340deg) brightness(92%);}
+.pd-act.liked{color:#e0432a;}
+.pd-act.active{color:#1f6d2e;}
+
+.pd-comment-block{padding:8px 18px 40px;border-top:8px solid #edf1ea;margin-top:10px;}
+.pd-comment-title{font-size:15px;font-weight:700;color:#1a2b1a;padding:14px 0 10px;}
+.pd-comment-row{display:flex;gap:8px;}
+.pd-comment-input{flex:1;border:1px solid #dde5d8;border-radius:999px;padding:9px 14px;font-size:14px;background:#fff;outline:none;}
+.pd-comment-send{border:none;background:#1f6d2e;color:#fff;border-radius:999px;padding:0 18px;font-size:14px;cursor:pointer;}
+.pd-toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);z-index:30;padding:9px 18px;border-radius:999px;background:rgba(26,43,26,.88);color:#fff;font-size:13px;white-space:nowrap;pointer-events:none;}
+.pd-comment-list{list-style:none;padding:0;margin:12px 0 0;}
+.pd-comment-list li{font-size:14px;color:#33413a;padding:10px 0;border-bottom:1px solid #eef1ec;}
+.pd-comment-empty{font-size:13px;color:#a5b2a0;padding:12px 0;}
+
+/* 社区帖子详情页：406px 手机宽居中外壳（覆盖上文） */
+.pd-stage{position:fixed;inset:0;overflow:hidden;display:flex;justify-content:center;align-items:stretch;background:#e7ede8;}
+.pd-canvas{width:min(406px,100vw);max-width:406px;height:100%;margin:0 auto;display:flex;flex-direction:column;background:#f4f7f1;overflow-y:auto;overflow-x:hidden;}
+
+/* 社区帖子详情：图片自适应铺满、手势滑动、无左右引导标 */
+.pd-gallery{position:relative;background:transparent;}
+.pd-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;}
+.pd-track::-webkit-scrollbar{display:none;}
+.pd-gallery-img{flex:0 0 100%;width:100%;height:min(430px,52vh);object-fit:cover;scroll-snap-align:center;display:block;}
+.pd-nav{display:none !important;}
+
+/* ===== 社区流轻提示 toast ===== */
+.cm-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 84px;
+  transform: translateX(-50%);
+  z-index: 30;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(26, 43, 26, 0.88);
+  color: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* 走失表单内联错误文案 */
+.cm-field-error {
+  font-size: 12px;
+  color: #e0432a;
+  line-height: 1.5;
+}
+
+/* 走失搜索输入框（透明嵌入搜索条） */
+.cm-lost-search-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  color: #1f3d22;
+}
+
+.cm-lost-search-input::placeholder {
+  color: #9aa894;
+}
+
+/* 作者页 / 帖子详情：内容不存在空态 */
+.up-empty-state,
+.pd-empty-state {
+  padding: 56px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.up-empty-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f3d22;
+}
+
+.up-empty-desc {
+  margin: 0;
+  font-size: 12.5px;
+  color: #8a9a86;
+  line-height: 1.6;
+}
+
+.up-empty-btn {
+  margin-top: 12px;
+  border: 1px solid #1f6d2e;
+  background: #fff;
+  color: #1f6d2e;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 8px 22px;
+  cursor: pointer;
+}
+
+/* 帖子详情缺图占位 */
+.pd-img-placeholder {
+  height: min(300px, 42vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef3ec;
+  color: #9aa894;
+  font-size: 13px;
+}
+
+/* 聊天页空态（复用社区绿主题，样式写在本模块 css） */
+.chat-empty {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.chat-empty-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f3d22;
+}
+
+.chat-empty-desc {
+  margin: 0;
+  font-size: 12.5px;
+  color: #8a9a86;
+  line-height: 1.6;
+}
+
+.chat-empty-btn {
+  margin-top: 12px;
+  border: 1px solid #1f6d2e;
+  background: #fff;
+  color: #1f6d2e;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 8px 22px;
+  cursor: pointer;
+}

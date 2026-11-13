@@ -1,0 +1,141 @@
+/* AI 侧边栏：默认是一条贴边折叠栏，点开是竖排图标栏（AI 派派 / 消息 / 购物车） */
+.ai-rail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 56px;
+  padding: 6px;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1.5px solid #93edf6;
+  box-shadow: 0 6px 18px rgba(38, 59, 52, 0.16);
+  z-index: 60;
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  /* 展开/收起时平滑过渡；拖动中由 .is-dragging 关掉，保证跟手 */
+  transition: transform 0.22s ease, width 0.22s ease, height 0.22s ease,
+    border-radius 0.22s ease, padding 0.22s ease, opacity 0.22s ease;
+}
+
+/* 只有一个 AI 图标时就是完整圆形按钮 */
+.ai-rail.is-single {
+  padding: 0;
+  border-radius: 50%;
+}
+
+.ai-rail.is-dragging {
+  transition: none;
+  cursor: grabbing;
+}
+
+.ai-rail-item {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f4fbf2;
+  overflow: visible;
+  transition: background 0.16s ease;
+}
+
+ /* 未读红点：消息图标右上角 */
+.ai-rail-dot {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  min-width: 8px;
+  height: 8px;
+  padding: 0 2px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: #f04438;
+  color: #fff;
+  font-size: 8px;
+  line-height: 8px;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+  box-shadow: 0 0 0 1.5px #fff;
+}
+
+.ai-rail-item.is-ai {
+  background: #fefcfc;
+}
+
+.ai-rail-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* 消息 / 购物车图标本体留白更大，不铺满圆钮 */
+.ai-rail-item.is-quick img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.ai-rail-item:hover {
+  background: #e9f7e4;
+}
+
+/* 收起态：贴边的窄折叠栏，只露三点把手 */
+.ai-rail.is-collapsed {
+  width: 16px;
+  height: 64px;
+  padding: 0;
+  gap: 0;
+  border-radius: 10px;
+  opacity: 0.92;
+  box-shadow: 0 3px 10px rgba(38, 59, 52, 0.16);
+  cursor: pointer;
+}
+
+.ai-rail.is-collapsed .ai-rail-item {
+  display: none;
+}
+
+.ai-rail-handle {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #93edf6 0%, #cdf6fa 100%);
+}
+
+.ai-rail.is-collapsed .ai-rail-handle {
+  display: flex;
+}
+
+.ai-rail-handle i {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #2f7f88;
+  opacity: 0.75;
+}
+
+.ai-rail.is-collapsed:hover .ai-rail-handle {
+  background: linear-gradient(180deg, #7fe6f1 0%, #bdf2f8 100%);
+}

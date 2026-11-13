@@ -1,0 +1,85 @@
+/* 通用二级页 */
+.simple-canvas {
+  padding-bottom: 20px;
+}
+
+.simple-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 4px 14px;
+}
+
+.simple-back {
+  background: none;
+  border: none;
+  color: #1a2b1a;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.simple-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a2b1a;
+}
+
+.simple-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.simple-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(31, 109, 46, 0.08);
+}
+
+.simple-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8a9a86;
+  font-size: 14px;
+}
+
+.simple-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eef2ec;
+}
+
+.simple-row:last-child {
+  border-bottom: none;
+}
+
+.simple-row-label {
+  font-size: 15px;
+  color: #1a2b1a;
+}
+
+.simple-row-value {
+  font-size: 14px;
+  color: #8a9a86;
+}
+
+.simple-row-disabled {
+  opacity: 0.55;
+}
+
+.simple-row-disabled .simple-row-label {
+  color: #8a9a86;
+}
+
+/* 账号与安全：退出登录 */
+.simple-logout{
+  width:100%;margin-top:22px;
+  height:52px;border:none;border-radius:999px;
+  background:#f2f5f2;color:#e0432a;
+  font-size:16px;font-weight:600;cursor:pointer;
+}
+.simple-logout:active{background:#fdecec;}

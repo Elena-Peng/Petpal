@@ -1,0 +1,365 @@
+/* 社区-发布动态页（Frame372721 / 372889 / 372964）：复用 406px 居中手机列与绿色主题，独立外壳，无底部 Bar */
+.cp-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background: #e7ede8;
+}
+
+.cp-canvas {
+  position: relative;
+  width: min(406px, 100vw);
+  max-width: 406px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #e8f8d8 0%, #f2fce6 28%, #fbfff6 100%);
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 18px 16px 28px;
+  box-sizing: border-box;
+}
+
+.cp-canvas::-webkit-scrollbar {
+  display: none;
+}
+
+/* 顶部导航 */
+.cp-nav {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 2px 14px;
+}
+
+.cp-back {
+  border: 0;
+  background: transparent;
+  color: #1f3d22;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.cp-nav-title h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1f3d22;
+}
+
+.cp-nav-title p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #7a8a76;
+}
+
+/* 类型胶囊：日常分享 / 求助 / 领养公益 */
+.cp-type-row {
+  flex: none;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.cp-type {
+  flex: 1;
+  border: 1px solid #dfe8dd;
+  background: #ffffff;
+  color: #5f6f5b;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 6px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.cp-type.active {
+  background: #1f6d2e;
+  color: #ffffff;
+  border-color: #1f6d2e;
+}
+
+/* 正文编辑卡 */
+.cp-editor {
+  flex: none;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 4px 14px rgba(60, 110, 70, 0.08);
+  margin-bottom: 14px;
+}
+
+.cp-editor textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  resize: vertical;
+  min-height: 110px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1f3d22;
+}
+
+.cp-editor textarea::placeholder {
+  color: #9aa894;
+}
+
+/* 添加图片 / 视频 */
+.cp-media {
+  flex: none;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.cp-media-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px dashed #b9d3ba;
+  background: #f7faf6;
+  border-radius: 14px;
+  padding: 14px 8px;
+  font-size: 13px;
+  color: #5f6f5b;
+  cursor: pointer;
+}
+
+.cp-media-btn img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* 关联宠物 / 选择话题 / 所在位置 */
+.cp-meta {
+  flex: none;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2px 14px;
+  box-shadow: 0 4px 14px rgba(60, 110, 70, 0.08);
+  margin-bottom: 12px;
+}
+
+.cp-meta-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  padding: 13px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef3ec;
+  text-align: left;
+}
+
+.cp-meta-row:last-child {
+  border-bottom: 0;
+}
+
+.cp-meta-row img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex: none;
+}
+
+.cp-meta-label {
+  flex: 1;
+  font-size: 13.5px;
+  color: #1f3d22;
+  font-weight: 600;
+}
+
+.cp-meta-value {
+  font-size: 12.5px;
+  color: #8a9a86;
+}
+
+/* 安全审核提示 */
+.cp-audit {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 2px 2px 16px;
+}
+
+.cp-audit img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.cp-audit span {
+  font-size: 12px;
+  color: #7a8a76;
+}
+
+/* 提交按钮（推到底部） */
+.cp-submit {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  background: #1f6d2e;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.cp-submit img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.cp-submit:disabled {
+  opacity: 0.7;
+}
+
+/* 已选图片预览网格 */
+.cp-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 10px 0 0;
+}
+
+.cp-preview-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cp-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cp-preview-del {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 已选视频预览 */
+.cp-video-preview {
+  position: relative;
+  margin: 10px 0 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cp-video-preview video {
+  width: 100%;
+  max-height: 220px;
+  border-radius: 10px;
+  display: block;
+  background: #000;
+}
+
+.cp-video-preview .cp-preview-del {
+  top: 8px;
+  right: 8px;
+}
+
+/* 选择面板（宠物 / 话题 / 位置） */
+.cp-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 10px;
+  background: #f3f7ee;
+  border-radius: 12px;
+}
+
+.cp-option {
+  border: 1px solid #d6e3cd;
+  background: #fff;
+  color: #2b3b2a;
+  font-size: 13px;
+  border-radius: 16px;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+
+.cp-option.on {
+  border-color: #1f6d2e;
+  background: #1f6d2e;
+  color: #fff;
+}
+
+/* 无宠物时的提示（不发按钮，避免点了没反应） */
+.cp-option-empty {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #7a8a76;
+}
+
+/* 发布表单内联错误文案 */
+.cp-form-error {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  color: #e0432a;
+  text-align: center;
+}
+
+/* 视频草稿链接失效提示 */
+.cp-video-note {
+  margin: 8px 2px 0;
+  font-size: 11.5px;
+  color: #8a6234;
+  line-height: 1.5;
+}
+
+/* 发布成功轻提示 */
+.cp-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 84px;
+  transform: translateX(-50%);
+  z-index: 30;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(26, 43, 26, 0.88);
+  color: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+}

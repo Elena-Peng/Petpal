@@ -1,0 +1,835 @@
+/* 宠物家庭页 */
+.pf-canvas {
+  background: linear-gradient(180deg, #d8f5b6 0%, #eefbd8 12%, #fbfff6 40%);
+  padding: 0 16px 20px;
+}
+
+.pf-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0 14px;
+}
+
+.pf-back {
+  background: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a2b1a;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-size: 18px;
+}
+
+.pf-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+
+.pf-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 家庭概览卡片 */
+.pf-family-card {
+  background: #e8f0e8;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pf-family-avatars {
+  display: flex;
+}
+
+.pf-family-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #e8f0e8;
+  object-fit: cover;
+  margin-left: -10px;
+}
+
+.pf-family-avatar:first-child {
+  margin-left: 0;
+}
+
+.pf-family-title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+
+.pf-family-sub {
+  margin: 0;
+  font-size: 12px;
+  color: #6a7a66;
+}
+
+/* 区块标题 */
+.pf-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pf-section-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+
+.pf-section-more {
+  font-size: 13px;
+  color: #6a7a66;
+  cursor: pointer;
+}
+
+/* 宠物列表 */
+.pf-pet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pf-pet-item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 16px rgba(31, 109, 46, 0.06);
+}
+
+.pf-pet-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.pf-pet-info {
+  flex: 1;
+}
+
+.pf-pet-name {
+  margin: 0 0 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a2b1a;
+}
+
+.pf-pet-meta {
+  margin: 0;
+  font-size: 12px;
+  color: #8a9a86;
+}
+
+.pf-pet-edit {
+  background: #f5f7f4;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #1a2b1a;
+  cursor: pointer;
+}
+
+.pf-add-pet {
+  border: 2px dashed #c8dcc0;
+  background: transparent;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f6d2e;
+  cursor: pointer;
+}
+
+/* 家庭成员 */
+.pf-member-list {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(31, 109, 46, 0.06);
+}
+
+.pf-member-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.pf-member-item:last-child {
+  border-bottom: none;
+}
+
+.pf-member-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.pf-member-info {
+  flex: 1;
+}
+
+.pf-member-name {
+  margin: 0 0 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a2b1a;
+}
+
+.pf-member-role {
+  margin: 0;
+  font-size: 12px;
+  color: #8a9a86;
+}
+
+.pf-member-tag {
+  font-size: 12px;
+  color: #8a9a86;
+}
+
+.pf-invite {
+  border: 2px dashed #c8dcc0;
+  background: transparent;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f6d2e;
+  cursor: pointer;
+}
+
+.pf-note {
+  margin: 0;
+  font-size: 12px;
+  color: #8a9a86;
+  line-height: 1.5;
+}
+
+/* 编辑宠物表单 */
+.pf-form-group {
+  margin-bottom: 16px;
+}
+
+.pf-form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.pf-form-row .pf-form-group {
+  flex: 1;
+}
+
+.pf-form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a2b1a;
+}
+
+.pf-form-input {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0 16px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.pf-form-textarea {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  padding: 12px 16px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.pf-type-row {
+  display: flex;
+  gap: 8px;
+}
+
+.pf-type-btn {
+  padding: 8px 20px;
+  border: 1px solid #e0e6dd;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 13px;
+  color: #4a5a48;
+  cursor: pointer;
+}
+
+.pf-type-btn.active {
+  background: #1f6d2e;
+  color: #fff;
+  border-color: #1f6d2e;
+}
+
+.pf-avatar-pick {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.pf-pick-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.pf-pick-avatar:first-child {
+  border-color: #1f6d2e;
+}
+
+.pf-pick-add {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px dashed #c8dcc0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #1f6d2e;
+  cursor: pointer;
+}
+
+.pf-save-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 24px;
+  background: #95d96b;
+  color: #1a2b1a;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* 宠物切换栏 */
+.pf-pet-switch {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding: 8px 0 16px;
+}
+
+.pf-switch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.pf-switch-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+}
+
+.pf-switch-item.active .pf-switch-avatar {
+  border-color: #1f6d2e;
+}
+
+.pf-switch-name {
+  font-size: 13px;
+  color: #1a2b1a;
+  font-weight: 500;
+}
+
+.pf-switch-add {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px dashed #c8dcc0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #1f6d2e;
+}
+
+.pf-pick-avatar.selected {
+  border-color: #1f6d2e;
+}
+
+/* 上传图片 */
+.pf-upload-row {
+  display: flex;
+  gap: 12px;
+}
+
+.pf-upload-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.pf-upload-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pf-upload-add {
+  border: 2px dashed #c8dcc0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #1f6d2e;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ===== 家庭成员：左滑删除 / 点击查看详情 ===== */
+.pf-member-item {
+  border-bottom: none;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.22s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pf-member-swipe {
+  position: relative;
+  overflow: hidden;
+}
+
+.pf-member-swipe:not(:last-child) {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.pf-member-del {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: none;
+  background: #e5533d;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  width: 64px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+/* 行被左滑后才露出删除按钮，未滑动时完全不可见 */
+.pf-member-del.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pf-member-avatar-img {
+  object-fit: cover;
+}
+
+.pf-member-avatar-empty {
+  background: #e8f5e0;
+  color: #1f6d2e;
+}
+
+/* ===== 底部抽屉（成员详情 / 邀请）===== */
+.pf-sheet-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 32, 20, 0.38);
+  z-index: 90;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.pf-sheet {
+  width: 100%;
+  max-width: 406px;
+  background: #fff;
+  border-radius: 18px 18px 0 0;
+  padding: 10px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+  box-sizing: border-box;
+  max-height: 82vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pf-sheet-grab {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: #dfe8da;
+  margin: 2px auto 4px;
+}
+
+.pf-sheet-member {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pf-sheet-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.pf-sheet-avatar-empty {
+  background: #e8f5e0;
+  color: #1f6d2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.pf-sheet-name {
+  margin: 0 0 2px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+
+.pf-sheet-sub {
+  margin: 0;
+  font-size: 12px;
+  color: #7c8a78;
+  line-height: 1.6;
+}
+
+.pf-sheet-label {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a2b1a;
+}
+
+.pf-sheet-empty {
+  margin: 0;
+  font-size: 12px;
+  color: #9aa79a;
+}
+
+.pf-sheet-pets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pf-sheet-pet {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f7fbf4;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.pf-sheet-pet-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.pf-sheet-pet-empty {
+  background: #e8f5e0;
+  color: #1f6d2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.pf-sheet-pet-name {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a2b1a;
+}
+
+.pf-sheet-pet-meta {
+  margin: 0;
+  font-size: 12px;
+  color: #8a9a86;
+}
+
+.pf-sheet-danger {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 14px;
+  background: #fdeceb;
+  color: #c0392b;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pf-sheet-cancel {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 14px;
+  background: #f2f7ee;
+  color: #1a2b1a;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 邀请：输入昵称 + 最近联系人 */
+.pf-invite-input {
+  margin: 12px 0 4px;
+}
+
+.pf-invite-input input {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #dfe8da;
+  border-radius: 12px;
+  background: #f9fcf7;
+  padding: 0 14px;
+  font-size: 14px;
+  color: #1a2b1a;
+  outline: none;
+}
+
+.pf-invite-hint {
+  margin: 10px 0 6px;
+  font-size: 12px;
+  color: #8a9a86;
+}
+
+.pf-invite-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pf-invite-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e3efe0;
+  background: #fff;
+  border-radius: 999px;
+  padding: 4px 10px 4px 4px;
+  font-size: 12.5px;
+  color: #1a2b1a;
+  cursor: pointer;
+}
+
+.pf-invite-chip.is-on {
+  border-color: #1f6d2e;
+  background: #eaf6e4;
+  color: #1f6d2e;
+}
+
+.pf-invite-chip img,
+.pf-invite-chip-ph {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eaf6e4;
+  color: #1f6d2e;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pf-invite-tip {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: #9aa89a;
+  line-height: 1.5;
+}
+
+.pf-sheet-primary {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 14px;
+  background: #1f6d2e;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 14px 0 8px;
+}
+
+/* 邀请候选列表 */
+.pf-invite-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pf-invite-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9fcf7;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.pf-invite-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.pf-invite-info {
+  flex: 1;
+}
+
+.pf-invite-name {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a2b1a;
+}
+
+.pf-invite-meta {
+  margin: 0;
+  font-size: 12px;
+  color: #8a9a86;
+}
+
+.pf-invite-btn {
+  border: none;
+  border-radius: 999px;
+  background: #1f6d2e;
+  color: #fff;
+  font-size: 13px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.pf-invite-btn.joined {
+  background: #eef2ec;
+  color: #8a9a86;
+  cursor: default;
+}
+
+/* 轻提示 */
+.pf-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 96px;
+  transform: translateX(-50%);
+  background: rgba(26, 43, 26, 0.9);
+  color: #fff;
+  font-size: 13px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  z-index: 100;
+  max-width: 320px;
+  text-align: center;
+}
+
+/* 邀请抽屉：勾选本次要共享的宠物 */
+.pf-share-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0 8px;
+  font-size: 13px;
+  color: #1a2b1a;
+  font-weight: 600;
+}
+
+.pf-share-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7d6b;
+}
+
+.pf-share-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.pf-share-chip {
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  background: #f4f9f0;
+  color: #1a2b1a;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.16s, border-color 0.16s, color 0.16s;
+}
+
+.pf-share-chip.is-on {
+  background: #e8f7e2;
+  border-color: #6cc24a;
+  font-weight: 600;
+}
+
+.pf-share-chip.is-off {
+  background: #f6f7f5;
+  color: #9aa89a;
+}

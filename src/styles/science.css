@@ -1,0 +1,327 @@
+/* 宠物科普页：复用 406px 手机列与绿色主题，独立外壳，无底部 Bar */
+.ss-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: #e7ede8;
+}
+
+.ss-canvas {
+  position: relative;
+  width: min(406px, 100vw);
+  max-width: 406px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #d8f5b6 0%, #eefbd8 12%, #fbfff6 40%);
+  overflow: hidden;
+}
+
+.ss-canvas::-webkit-scrollbar {
+  display: none;
+}
+
+/* 顶部栏 */
+.ss-topbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 14px 8px;
+}
+
+.ss-back {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: transparent;
+  color: #1f6d2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ss-back:hover {
+  background: rgba(31, 109, 46, 0.08);
+}
+
+.ss-title {
+  flex: 1;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1f3d22;
+  margin-right: 34px;
+}
+
+/* 搜索框 */
+.ss-search {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 14px 12px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 9px 14px;
+  box-shadow: 0 2px 8px rgba(60, 110, 70, 0.06);
+}
+
+.ss-search-icon {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  flex: none;
+}
+
+.ss-search-input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 13.5px;
+  color: #22301f;
+}
+
+.ss-search-input::placeholder {
+  color: #9aa894;
+}
+
+/* 分类双行胶囊：每行可左右横滑显示更多 */
+.ss-cats {
+  flex: none;
+  display: flex;
+  gap: 8px;
+  padding: 2px 14px 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  /* 右侧渐隐遮罩，提示仍有更多标签可横向滑动 */
+  -webkit-mask-image: linear-gradient(90deg, #000 84%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(90deg, #000 84%, rgba(0, 0, 0, 0) 100%);
+}
+
+.ss-cats::-webkit-scrollbar {
+  display: none;
+}
+
+.ss-cat {
+  flex: none;
+  border: 1px solid rgba(46, 125, 50, 0.2);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ss-cat-label {
+  font-size: 12px;
+  color: #3a4638;
+  white-space: nowrap;
+}
+
+.ss-cat.active {
+  background: #1f6d2e;
+  border-color: #1f6d2e;
+}
+
+.ss-cat.active .ss-cat-label {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 文章流 */
+.ss-feed {
+  flex: 1;
+  padding: 2px 14px 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.ss-feed::-webkit-scrollbar {
+  display: none;
+}
+
+.ss-article {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 4px 14px rgba(60, 110, 70, 0.08);
+}
+
+.ss-article-title {
+  margin: 0 0 10px;
+  font-size: 19px;
+  font-weight: 800;
+  color: #1a2b1a;
+  line-height: 1.35;
+}
+
+.ss-article-mid {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ss-article-excerpt {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #6a7a66;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ss-thumb {
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex: none;
+}
+
+.ss-article-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ss-article-source {
+  font-size: 13px;
+  color: #4a5a48;
+  font-weight: 600;
+}
+
+.ss-article-time {
+  font-size: 13px;
+  color: #8a9a86;
+}
+
+/* 科普页底部导航 Bar：fixed 贴底、列内水平居中、不随滚动（复用首页 Bar 视觉素材） */
+.ss-canvas .component-2_437 {
+  position: fixed !important;
+  left: 50% !important;
+  top: auto !important;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(406px, 100vw) !important;
+  z-index: 45;
+}
+
+.ss-canvas .Pixso-symbol-2_437 {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+}
+
+/* ===== 科普文章详情页 ===== */
+.sci-stage{height:100%;}
+.sci-canvas{height:100%;overflow-y:auto;background:#f4f7f1;}
+.sci-head{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,.96);}
+.sci-back{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:none;background:transparent;color:#1a2b1a;cursor:pointer;}
+.sci-head-title{font-size:16px;font-weight:600;color:#1a2b1a;}
+.sci-head-ghost{width:34px;}
+
+.sci-gallery{position:relative;background:#000;}
+.sci-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;}
+.sci-track::-webkit-scrollbar{display:none;}
+.sci-gallery-img{width:100%;flex:0 0 100%;scroll-snap-align:center;object-fit:contain;max-height:420px;background:#000;}
+.sci-nav{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border:none;border-radius:50%;background:rgba(255,255,255,.75);color:#1a2b1a;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;}
+.sci-nav-left{left:10px;}
+.sci-nav-right{right:10px;}
+.sci-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5;}
+.sci-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:width .2s,background .2s;}
+.sci-dot.active{width:18px;border-radius:4px;background:#fff;}
+
+.sci-body{padding:18px 18px 40px;}
+.sci-title{font-size:18px;font-weight:700;color:#1a2b1a;line-height:1.5;}
+.sci-meta{display:flex;align-items:center;gap:10px;margin:10px 0 16px;font-size:13px;color:#7b8a74;}
+.sci-source{color:#1f6d2e;font-weight:600;}
+.sci-para{font-size:15px;line-height:1.9;color:#33413a;margin:0 0 16px;}
+.sci-foot{text-align:center;font-size:12px;color:#a5b2a0;margin-top:24px;}
+
+/* 科普详情页：406px 手机宽居中外壳（覆盖上文） */
+.sci-stage{position:fixed;inset:0;overflow:hidden;display:flex;justify-content:center;align-items:stretch;background:#e7ede8;}
+.sci-canvas{width:min(406px,100vw);max-width:406px;height:100%;margin:0 auto;display:flex;flex-direction:column;background:#f4f7f1;overflow-y:auto;overflow-x:hidden;}
+
+/* 科普详情：图片自适应铺满、手势滑动、无左右引导标 */
+.sci-gallery{position:relative;background:transparent;}
+.sci-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;}
+.sci-track::-webkit-scrollbar{display:none;}
+.sci-gallery-img{flex:0 0 100%;width:100%;height:min(430px,52vh);object-fit:cover;scroll-snap-align:center;display:block;}
+.sci-nav{display:none !important;}
+
+/* ===== 科普列表空态（搜索/分类无匹配） ===== */
+.ss-empty{
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+}
+
+.ss-empty-title{
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #3a4638;
+}
+
+.ss-empty-sub{
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  color: #8a9a86;
+}
+
+.ss-empty-btn{
+  border: 1px solid #1f6d2e;
+  background: #ffffff;
+  color: #1f6d2e;
+  border-radius: 16px;
+  padding: 8px 18px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ===== 科普详情：内容不存在空态 ===== */
+.sci-empty{
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+}
+
+.sci-empty-title{
+  margin: 0;
+  font-size: 15px;
+  color: #6a7a66;
+}
+
+.sci-empty-btn{
+  border: none;
+  background: #1f6d2e;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 9px 20px;
+  font-size: 13px;
+  cursor: pointer;
+}

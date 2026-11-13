@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 登录页局部样式（首页仍使用导出稿原生 CSS） */
+.login-root {
+  height: 100%;
+}
+
+/* 隐藏输入框自动填充的黄底 */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+  -webkit-text-fill-color: #3a2e28;
+}

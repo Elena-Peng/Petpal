@@ -1,0 +1,185 @@
+/* 首页宠物卡（数据驱动，作为 flow 元素替代 Pixso 原宠物卡 332_320/332_335，嵌入 Frame 首页） */
+.hpc-stage {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 5;
+  order: 2; /* 紧跟问候(order1)之后 */
+  flex-shrink: 0;
+}
+
+.hpc-card {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #e3f6ce 0%, #eefbd8 55%, #f4fbeb 100%);
+  box-shadow: 0 4px 14px rgba(31, 109, 46, 0.08);
+  padding: 12px 14px 10px;
+  overflow: hidden;
+}
+.hpc-body {
+  min-width: 0;
+}
+
+/* 右侧宠物照片：右上角小图，左缘 mask 渐变柔化（无竖直硬边界），数据三格全宽在下方 */
+.hpc-photo {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 30%;
+  height: 112px;
+  overflow: hidden;
+  border-radius: 0 20px 20px 0;
+}
+.hpc-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 22%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 22%);
+}
+
+/* 名字胶囊 */
+.hpc-name-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border-radius: 11px;
+  padding: 4px 8px 4px 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(31, 109, 46, 0.08);
+}
+.hpc-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+.hpc-avatar-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f6d2e;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.hpc-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1a2b1a;
+}
+.hpc-caret {
+  color: #1f6d2e;
+}
+
+/* 档案标签 */
+.hpc-profile {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #4a5a48;
+}
+.hpc-profile-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1f6d2e;
+}
+
+/* 状态 */
+.hpc-status {
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #1a2b1a;
+  line-height: 1.15;
+  max-width: 62%;
+}
+.hpc-status-sub {
+  margin-top: 3px;
+  font-size: 12px;
+  color: #4a5a48;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 62%;
+}
+
+/* 数据三格 */
+.hpc-metrics {
+  display: flex;
+  margin-top: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  padding: 8px 0;
+}
+.hpc-metric {
+  flex: 1;
+  text-align: center;
+  border-left: 1px solid #e6eee2;
+}
+.hpc-metric:first-child {
+  border-left: none;
+}
+.hpc-metric strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f6d2e;
+}
+.hpc-metric span {
+  display: block;
+  margin-top: 1px;
+  font-size: 11px;
+  color: #7a8a7a;
+}
+
+/* 空态引导卡 */
+.hpc-card.hpc-empty {
+  text-align: center;
+  padding: 26px 18px;
+}
+.hpc-empty-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #1f6d2e;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hpc-empty-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+.hpc-empty-sub {
+  margin-top: 7px;
+  font-size: 13px;
+  color: #4a5a48;
+  line-height: 1.6;
+}
+.hpc-empty-btn {
+  margin-top: 16px;
+  border: 0;
+  background: #1f6d2e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+}

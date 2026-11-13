@@ -1,0 +1,227 @@
+/* 编辑个人资料页 */
+.pe-canvas {
+  padding-bottom: 20px;
+}
+
+.pe-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 4px 14px;
+}
+
+.pe-back, .pe-close {
+  background: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a2b1a;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.pe-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a2b1a;
+}
+
+.pe-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pe-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(31, 109, 46, 0.06);
+}
+
+.pe-avatar-main {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.pe-avatar-big {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid #7ed957;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pe-avatar-big img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 无头像时的大圆占位：灰底人形，避免把示例图 / 别人用过的头像当默认头像显示 */
+.pe-avatar-empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2ec;
+}
+
+.pe-avatar-info h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  color: #1a2b1a;
+}
+
+.pe-avatar-info p {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: #8a9a86;
+}
+
+.pe-avatar-list {
+  display: flex;
+  gap: 10px;
+}
+
+.pe-avatar-sm {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.pe-avatar-sm.active {
+  border: 2px solid #7ed957;
+}
+
+.pe-avatar-sm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pe-check {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  background: #7ed957;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pe-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pe-field label {
+  font-size: 13px;
+  color: #1a2b1a;
+  font-weight: 600;
+}
+
+.pe-field input,
+.pe-field select,
+.pe-field textarea {
+  border: 1px solid #e0e6dd;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  background: #fff;
+  color: #1a2b1a;
+  outline: none;
+  font-family: inherit;
+}
+
+.pe-field textarea {
+  resize: none;
+  position: relative;
+}
+
+.pe-row {
+  display: flex;
+  gap: 12px;
+}
+
+.pe-row .pe-field {
+  flex: 1;
+}
+
+.pe-counter {
+  align-self: flex-end;
+  font-size: 11px;
+  color: #8a9a86;
+  margin-top: -20px;
+  margin-right: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.pe-safe {
+  display: flex;
+  gap: 10px;
+  background: #e8f5e0;
+  border-radius: 12px;
+  padding: 14px;
+  color: #1f6d2e;
+}
+
+.pe-safe strong {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.pe-safe p {
+  margin: 0;
+  font-size: 11px;
+  color: #4a6b4d;
+}
+
+.pe-save {
+  background: #7ed957;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a2b1a;
+  cursor: pointer;
+}
+
+.pe-error {
+  margin: -4px 0 0;
+  font-size: 12px;
+  color: #e0432a;
+}
+
+.pe-toast {
+  position: absolute;
+  left: 50%;
+  bottom: 96px;
+  transform: translateX(-50%);
+  z-index: 20;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(26, 43, 26, 0.85);
+  color: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+}
