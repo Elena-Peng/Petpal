@@ -4,8 +4,8 @@ interface ThirdPartyLoginProps {
 }
 
 const channels = [
-  { key: 'wechat', label: '微信账号登录', icon: '/assets/wechat.svg' },
-  { key: 'qq', label: 'QQ账号登录', icon: '/assets/qq.svg' }
+  { key: 'wechat', label: '微信账号登录', icon: `${import.meta.env.BASE_URL}assets/wechat.svg` },
+  { key: 'qq', label: 'QQ账号登录', icon: `${import.meta.env.BASE_URL}assets/qq.svg` }
 ]
 
 export default function ThirdPartyLogin({ onAction }: ThirdPartyLoginProps) {
